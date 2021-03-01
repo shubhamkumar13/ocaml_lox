@@ -1,0 +1,16 @@
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(executable
+ (name lox)
+ (modules lox)
+ (libraries core stdio)
+ (preprocess
+  (pps
+   ppx_inline_test
+   ppx_deriving.show
+   ppx_deriving.ord
+   ppx_deriving.make
+   ppx_deriving.eq)))
